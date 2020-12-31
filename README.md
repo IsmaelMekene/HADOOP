@@ -1,6 +1,6 @@
 # :cloud: Hadoop fundamentals :elephant:
 
-![]("https://img.colabug.com/2018/06/f1b0b7937d76bbd0615d0bbdbcb33c3c.gif")
+![]("https://github.com/IsmaelMekene/HADOOP/blob/main/images/hdfs.gif")
 
 **Apache Hadoop** is a tightly integrated ecosystem of different software products built to provide scalable and reliable distributed storage and distributing processing. The technical foundations of Hadoop stem from successive innovative approaches proposed and published by Google in the 2000's to produce:
 
