@@ -43,11 +43,11 @@ Having these informations in RAM has some trade-offs:
 - However we are limited by the size of the RAM
 - One consequence of this is that we should avoid putting millions or billions of small files ! This would just overload the memory
 
-![](Images_course_review/Name_and_Data_nodes.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/Name_and_Data_nodes.png)
 
 It is also possible to run a *secondary NameNode* which despite its name does not act as the primary NameNode. Its main role is to **keep a copy of the File System image of the primary NameNode** which contains all details and metadata. This image is periodically built and updated by the secondary NameNode through interaction with the **JournalNodes** which contains all the logs related to the primary NameNode operations. The secondary NameNode runs on a separate machine as it requires CPU power and as much memory as the NameNode.</p>
 
-![](Images_course_review/Secondary_namenode.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/Secondary_namenode.png)
 
 ### HDFS high availability
 
@@ -59,7 +59,7 @@ Since Hadoop 2 there is now the implementation of a pair of NameNodes in an **ac
 - We must ensure that only one NameNode is in active state to avoid any **split / brain** scenario (thank to *ZooKeeper*).
 - The standby NameNode also ensures the role of the secondary NameNode by taking periodic checkpoints of the active NameNode state.
 
-![](Images_course_review/ha_archi.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/ha_archi.png)
 
 ### HDFS: Practice with Labs
 
@@ -68,7 +68,7 @@ All the labs have been performed in the frame of the Data Engineering applied ma
 If you do not have access to such service you can still follow the walk-through and these notes to get an idea about the way the Hadoop infrastructure and services work or deploy an Hadoop cluster locally. 
 The general setup for the lab looks as depicted in the figure below. We basically connect by SSH and through VPN to an **edge node** from which we can perfom local operations and send HDFS-related operations.
 
-![](Images_course_review/lab_setup.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/lab_setup.png)
 
 ### YARN
 
@@ -77,12 +77,12 @@ Nevertheless these API are abstracted from the user code. Instead a typical user
 Among others MapReduce, Spark, Tez or Hive are examples of computing frameworks running as YARN applications on the compute layer (provided by YARN) and the storage layer (provided by HDFS). 
 There is also a extra layer of applications that build on top of these frameworks. For example *Pig* and *Hive* run on MapReduce, Spark or Tez and don't directly interact with YARN. 
 
-![](Images_course_review/yarn_applications.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/yarn_applications.png)
 
 ### Overview of YARN running
 In its core YARN provides two types of daemon: a **resource manager** (two by cluster in a stand-by configuration to ensure high availability) and several node managers. As indicated by its name the resource manager manages the use of resource across the cluster and the node managers launch and monitor **containers** where computations will happen. The figure below depicts possible scenarios when using YARN applications.
 
-![](Images_course_review/overview_of_yarn.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/overview_of_yarn.png)
 
 1. To run an application the client will contact the ressource manager **(1)** and ask it to run an *application master* process **(2)**.
 2. The resource manager finds a node manager that can launch the application master in a container **(3)**.
@@ -107,7 +107,7 @@ Hadoop splits the input into several chunks. To each chunk is associated a **map
 In respect to **data locality** Hadoop will do its best to run the tasks where the data reside. Map tasks are written on the local disk not on HDFS. This is because map outputs are intermediary data that will be processed by the reduced tasks. When all the job is done, the data produced by the map tasks are removed. So storing it in HDFS (which implies the replication of this data) sounds like an overkill.
 Reduce tasks do not take advantage of data locality. Indeed the input for a reduce task is normally the **merged, shuffled and sorted output of all the mappers**. The output fo the reduce task is saved on HDFS for reliability. A typical workflow of this process is depicted in the figure below.
 
-![MapReduce](https://github.com/IsmaelMekene/HADOOP/blob/main/images/MapReduce.png)
+[MapReduce](https://github.com/IsmaelMekene/HADOOP/blob/main/images/MapReduce.png)
 
 ### MapReduce: Practice with Labs
 
@@ -125,7 +125,7 @@ In contrast to this and given the fact that Hive harnesses the MapReduce algorit
 
 ### Anatomy of Hive
 
-![](Images_course_review/hive_anatomy.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/hive_anatomy.png)
 
 ### Tables in Hive
 A Hive table is made up of the data being stored and the associated metadata describing the layout of the data in the table. The data typically resides in HDFS. Hive stores the metadata in a relational database (metastore) and not in HDFS.
