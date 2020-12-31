@@ -1,6 +1,6 @@
 # :cloud: Hadoop fundamentals :elephant:
 
-![]("https://github.com/IsmaelMekene/HADOOP/blob/main/images/hdfs.gif")
+
 
 **Apache Hadoop** is a tightly integrated ecosystem of different software products built to provide scalable and reliable distributed storage and distributing processing. The technical foundations of Hadoop stem from successive innovative approaches proposed and published by Google in the 2000's to produce:
 
@@ -9,6 +9,10 @@
 - low-latency random access queries on hundreds to thousands unreliable servers
 
 The key innovation in this approach was to distribute data and split-up computations on this data in small chunks over different machines / servers. By design distributed systems scale very well. As each machine is independent, scaling the infrastructure only consists of adding some servers (horizontal scaling).
+
+<p align="center">
+  <img src="https://github.com/IsmaelMekene/HADOOP/blob/main/images/hdfs.gif"/>
+</p>
 
 Distributed systems are:
 - *Scalable*
