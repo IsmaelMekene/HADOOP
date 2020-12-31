@@ -107,7 +107,7 @@ Hadoop splits the input into several chunks. To each chunk is associated a **map
 In respect to **data locality** Hadoop will do its best to run the tasks where the data reside. Map tasks are written on the local disk not on HDFS. This is because map outputs are intermediary data that will be processed by the reduced tasks. When all the job is done, the data produced by the map tasks are removed. So storing it in HDFS (which implies the replication of this data) sounds like an overkill.
 Reduce tasks do not take advantage of data locality. Indeed the input for a reduce task is normally the **merged, shuffled and sorted output of all the mappers**. The output fo the reduce task is saved on HDFS for reliability. A typical workflow of this process is depicted in the figure below.
 
-[MapReduce](https://github.com/IsmaelMekene/HADOOP/blob/main/images/MapReduce.png)
+![](https://github.com/IsmaelMekene/HADOOP/blob/main/images/MapReduce.png)
 
 ### MapReduce: Practice with Labs
 
