@@ -11,7 +11,7 @@
 The key innovation in this approach was to distribute data and split-up computations on this data in small chunks over different machines / servers. By design distributed systems scale very well. As each machine is independent, scaling the infrastructure only consists of adding some servers (horizontal scaling).
 
 <p align="center">
-  <img src="https://github.com/IsmaelMekene/HADOOP/blob/main/images/hdfs.gif"/>
+  <img src="https://github.com/IsmaelMekene/HADOOP/blob/main/images/hdfs.gif"/> 
 </p>
 
 Distributed systems are:
